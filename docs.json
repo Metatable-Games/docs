@@ -9,79 +9,57 @@
   },
   "favicon": "/images/metagames-w-s.png",
   "navigation": {
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Forums",
+          "icon": "newspaper",
+          "href": "https://forums.meta-games.org"
+        },
+        {
+          "anchor": "MetaLink",
+          "icon": "id-badge",
+          "href": "https://registry.metatable.dev/dashboard"
+        }
+      ]
+    },
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Knight Framework",
         "groups": [
           {
             "group": "Getting started",
             "pages": [
               "index",
-              "quickstart",
-              "development"
+              "knight-framework/getting-started/installation",
+              "knight-framework/getting-started/what-are-services-controllers",
+              "knight-framework/getting-started/getting-a-service",
+              "knight-framework/getting-started/services-vs-controllers",
+              "knight-framework/getting-started/agf-knit-transition-to-knight",
+              "knight-framework/getting-started/exposed-server-functions"
             ]
           },
           {
-            "group": "Customization",
+            "group": "Examples",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
+              "knight-framework/examples/execution-model",
+              "knight-framework/examples/check-if-framework-has-loaded",
+              "knight-framework/examples/error-handling",
+              "knight-framework/examples/example-service-controller"
             ]
           },
           {
-            "group": "Writing content",
+            "group": "Modules",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "API reference",
-        "groups": [
-          {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "untitled-page",
+              "knight-framework/modules/knight-intellisense",
+              "knight-framework/getting-started/modules/knight-remotes",
+              "knight-framework/getting-started/knight-require"
             ]
           }
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
+    ]
   },
   "logo": {
     "light": "/images/metagames.png",

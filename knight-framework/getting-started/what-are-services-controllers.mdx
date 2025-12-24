@@ -1,0 +1,67 @@
+---
+title: "What are services/controllers?"
+---
+
+## **What are services/controllers?**
+
+Services/Controllers are module scripts that serve a specific purpose within your experience. For example, you might have services dedicated to handling the user interface (UI), managing player points, or controlling game-specific logic.
+
+## **Creating a Service**
+
+To create a service, you’ll need to place a new `ModuleScript` in one of the designated Knight service folders based on its purpose:
+
+- **Server-side services**: `Server`
+- **Client-side services (aka Controllers)**: `Client`
+- **Shared services**: `Shared`
+
+## **Default Functions**
+
+- `Init()`: Called during the initialization phase of the service. This is optional and typically used for setting up any necessary data or connections before the service starts.
+
+  Copy
+
+  ```
+  function Knight:Init()
+      -- Initialization logic here
+  end
+  ```
+- `Start()`: Called when the service is ready to begin its main functionality. This is also optional and is typically used to start processes like event listeners, timers, etc.
+
+  Copy
+
+  ```
+  function Knight:Start()
+      -- Start logic here
+  end
+  ```
+- `Update(deltaTime)`: Called every frame. This function is optional and is used for tasks that need to be updated regularly, such as animations or game logic.
+
+  Copy
+
+  ```
+  function Knight:Update(deltaTime)
+      -- Frame update logic here
+  end
+  ```
+
+## **Configuration Options**
+
+- `CanStart`, `CanUpdate`, `CanInit`:
+
+  These booleans determine whether the `Start()`, `Update()`, and `Init()` functions will be called.
+
+If you're using a third-party module and don't want Knight to call its default start functions or inject the framework, set `Standalone`to `true`. This will disable the metatable inject and other framework features to ensure it remains Standalone.
+
+### **Priority Startup**
+
+The default priority levels are as follows:
+
+- Internal Services: 4
+- Objects: 3
+- Services: 2
+
+You can adjust the startup priority by setting `.Priority` to a specific number in the script. Higher priority numbers indicate an earlier startup.
+
+## **Additional Configuration**
+
+Optionally, if you have an instance that has the collection tag "**KNIGHT_IGNORE**" it will be automatically ignored and not inited/imported into the framework
